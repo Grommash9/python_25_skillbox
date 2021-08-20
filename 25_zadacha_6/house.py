@@ -7,9 +7,16 @@ class House:
         self.__dirt = dirt
         self.__resident_list = resident_list
         self.__wardrobe = 0
+        self.final_results = {
+            'total_money': 0,
+            'total_human_food_buy': 0,
+            'total_animal_food_buy': 0,
+            'total_fur_coat': 0
+            }
 
     def new_fur_coat(self):
         self.__wardrobe += 1
+        self.final_results['total_fur_coat'] += 1
 
     def destruction_of_wallpaper(self):
         self.__dirt -= 5
@@ -25,12 +32,15 @@ class House:
 
     def human_food_added(self, food):
         self.__refrigerator += food
+        self.final_results['total_human_food_buy'] += food
 
     def animal_food_added(self, food):
         self.__food_for_animals += food
+        self.final_results['total_animal_food_buy'] += food
 
     def money_earned(self, amount):
         self.__nightstand += amount
+        self.final_results['total_money'] += amount
 
     def money_taken(self, amount):
         self.__nightstand -= amount

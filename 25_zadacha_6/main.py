@@ -18,7 +18,6 @@ target_day = 365
 
 
 while current_day < target_day:
-    print(bakery_street_5.info())
     current_day += 1
     print('     Начался день номер', current_day)
     bakery_street_5.dirt_added()
@@ -80,6 +79,9 @@ while current_day < target_day:
                 alive.sleep()
 
 print(bakery_street_5.info())
+
+for items in bakery_street_5.final_results.items():
+    print(items)
 
 
 
